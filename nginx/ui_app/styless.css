@@ -1,0 +1,124 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex; 
+    justify-content: center;
+    
+}
+
+.whole{
+    margin: 10px 10px 10px 10px;
+}
+
+
+.container{
+    border: solid #d0d5dd 1px;
+    border-radius: 4px;
+    padding: 24px 0px 32px 0px ;
+    width: 375px;
+    height: 514px;
+    display: grid;
+    grid-row-gap: 16px; 
+}
+
+.header1{
+    padding: 12px 16px 12px 16px ;
+    
+}
+
+.form1{
+    
+    width: 375px;
+    height: 398px;
+    padding: 0px 16px 0px 16px;
+   
+}
+
+form{
+    display: grid;
+    grid-row-gap: 24px;
+}
+
+
+
+label{
+    color: #465163;
+    font-size: 14px;
+}
+
+input, select, button {
+    border: solid #d0d5dd 1px;
+    border-radius: 8px;
+    padding: 12px 16px 12px 16px ;
+    margin-top: 6px;
+    height:48px;
+    width:343px;
+    
+}
+
+.checkbox-container {
+    display: flex;        
+    align-items: center;    
+}
+
+.check{
+    height:20px;
+    width:20px;
+    margin-top:0px;
+    margin-right: 12px;
+}
+
+button{
+    background-color: #7f56d9;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.members{
+   
+   
+    padding: 24px 0px 32px 0px ;
+    width: 375px;
+    display: grid;
+    grid-row-gap: 16px;
+    
+}
+
+.item{
+    border: solid #d0d5dd 1px;
+    border-radius: 4px;
+    height:56px;
+    padding: 8px 16px 8px 16px;
+    display: flex;
+    justify-content: space-between;
+} 
+
+.info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.fullname{
+    font-size: 14px;
+    color:black;
+    font-weight: bold; 
+}
+
+.response-role{
+    color:gray
+}
+
+.delete-img {
+    cursor: pointer;
+    padding: 10px 10px 10px 10px;
+    
+}
