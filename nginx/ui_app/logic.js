@@ -1,6 +1,5 @@
 function newDiv(responseData) {
     let responseContainer = document.querySelector('.members');
-    // Create repsonse item
     let response_item = document.createElement('div');
     response_item.classList.add('item');
     responseContainer.appendChild(response_item);
@@ -9,31 +8,24 @@ function newDiv(responseData) {
     info.classList.add('info');
     response_item.appendChild(info);
 
-    // Create response fullname
     let response_fullname = document.createElement('div');
     response_fullname.textContent = responseData['first_name'] + ' ' + responseData['last_name'];
     response_fullname.classList.add('fullname');
     info.appendChild(response_fullname);
 
-    // Create response role
     let response_role = document.createElement('div');
     response_role.textContent = responseData['role'];
     response_role.classList.add('response-role');
     info.appendChild(response_role);
 
-
-    // Create delete img
     let delete_img = document.createElement('img');
     delete_img.src = 'delete.png';
     delete_img.classList.add('delete-img');
     delete_img.addEventListener('click', () => {
         response_item.remove();
-        sendDeleteRequest(responseData);
+        sendDeleteRequest(responseData.id);  
     });
     response_item.appendChild(delete_img);
-   
-    
-    
 }
 
 async function sendGetRequest() {
@@ -64,14 +56,14 @@ async function sendPostRequest(data) {
     }
 }
 
-async function sendDeleteRequest(data) {
+async function sendDeleteRequest(userId) {
     try {
         const response = await fetch('http://localhost:8000/', {
             method: 'DELETE',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data)
+            body: JSON.stringify({ id: userId }) 
         });
         const responseData = await response.json();
         console.log(responseData);
